@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.BedRoomFragment">
 
     <!-- TODO: Update bedroom fragment layout -->
@@ -153,10 +153,10 @@
         android:layout_height="500dp"
         android:layout_below="@+id/weatherForecast"
         android:background="@drawable/body_shape"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:visibility="visible">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/textView"
@@ -166,8 +166,8 @@
             android:layout_marginTop="32dp"
             android:layout_marginBottom="392dp"
             android:text="Room Setting"
-            android:textSize="25dp"
             android:textColor="@color/dark"
+            android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.085"
@@ -262,15 +262,15 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bed_room_light_container"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_below="@+id/weatherForecast"
-        android:id="@+id/bed_room_light_container"
         android:background="@drawable/body_shape"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:visibility="invisible">
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/bed_room_light_1"
@@ -279,8 +279,8 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="80dp"
             app:cardBackgroundColor="@color/white"
-            app:cardElevation="4dp"
             app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -334,8 +334,8 @@
             android:layout_width="@dimen/baseCardButtonWidth"
             android:layout_height="@dimen/baseCardButtonHeight"
             app:cardBackgroundColor="@color/white"
-            app:cardElevation="4dp"
             app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
             app:layout_constraintBottom_toBottomOf="@+id/bed_room_light_3"
             app:layout_constraintEnd_toEndOf="@+id/bed_room_light_2"
             app:layout_constraintStart_toStartOf="@+id/bed_room_light_2"
@@ -392,8 +392,8 @@
             android:layout_height="@dimen/baseCardButtonHeight"
             android:layout_marginTop="52dp"
             app:cardBackgroundColor="@color/white"
-            app:cardElevation="4dp"
             app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
             app:layout_constraintEnd_toEndOf="@+id/bed_room_light_1"
             app:layout_constraintStart_toStartOf="@+id/bed_room_light_1"
             app:layout_constraintTop_toBottomOf="@+id/bed_room_light_1">
@@ -447,8 +447,8 @@
             android:layout_width="@dimen/baseCardButtonWidth"
             android:layout_height="@dimen/baseCardButtonHeight"
             app:cardBackgroundColor="@color/white"
-            app:cardElevation="4dp"
             app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
             app:layout_constraintBottom_toBottomOf="@+id/bed_room_light_1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.552"
@@ -504,10 +504,10 @@
             android:id="@+id/bed_room_btn_light_back"
             android:layout_width="70dp"
             android:layout_height="32dp"
-            android:src="@drawable/icon_back"
             android:layout_marginBottom="8dp"
             android:background="@drawable/shape"
             android:elevation="3dp"
+            android:src="@drawable/icon_back"
             app:layout_constraintBottom_toTopOf="@+id/bed_room_light_1"
             app:layout_constraintStart_toStartOf="@+id/bed_room_light_1" />
 
@@ -519,10 +519,10 @@
         android:layout_height="500dp"
         android:layout_below="@+id/weatherForecast"
         android:background="@drawable/body_shape"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:visibility="invisible">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
             android:id="@+id/bed_room_btn_air_conditioner_back"
