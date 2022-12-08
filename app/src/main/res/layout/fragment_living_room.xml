@@ -150,12 +150,12 @@
     </RelativeLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:visibility="visible"
+        android:id="@+id/living_room_setting_container"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_below="@+id/weatherForecast"
-        android:id="@+id/living_room_setting_container"
         android:background="@drawable/body_shape"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -167,8 +167,8 @@
             android:layout_marginStart="6dp"
             android:layout_marginBottom="392dp"
             android:text="Room Setting"
-            android:textSize="25dp"
             android:textColor="@color/dark"
+            android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.092"
@@ -238,9 +238,9 @@
                 <ImageView
                     android:id="@+id/imageVie7"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/img_air_conditioner"
+                    android:src="@drawable/pump"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -248,7 +248,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Air Conditioner"
+                    android:text="Pump"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -262,15 +262,15 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/living_room_light_container"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_below="@+id/weatherForecast"
-        android:id="@+id/living_room_light_container"
         android:background="@drawable/body_shape"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:visibility="invisible">
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/living_room_light_1"
@@ -279,8 +279,8 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="80dp"
             app:cardBackgroundColor="@color/white"
-            app:cardElevation="4dp"
             app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -334,8 +334,8 @@
             android:layout_width="@dimen/baseCardButtonWidth"
             android:layout_height="@dimen/baseCardButtonHeight"
             app:cardBackgroundColor="@color/white"
-            app:cardElevation="4dp"
             app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
             app:layout_constraintBottom_toBottomOf="@+id/living_room_light_3"
             app:layout_constraintEnd_toEndOf="@+id/living_room_light_2"
             app:layout_constraintStart_toStartOf="@+id/living_room_light_2"
@@ -392,8 +392,8 @@
             android:layout_height="@dimen/baseCardButtonHeight"
             android:layout_marginTop="52dp"
             app:cardBackgroundColor="@color/white"
-            app:cardElevation="4dp"
             app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
             app:layout_constraintEnd_toEndOf="@+id/living_room_light_1"
             app:layout_constraintStart_toStartOf="@+id/living_room_light_1"
             app:layout_constraintTop_toBottomOf="@+id/living_room_light_1">
@@ -447,8 +447,8 @@
             android:layout_width="@dimen/baseCardButtonWidth"
             android:layout_height="@dimen/baseCardButtonHeight"
             app:cardBackgroundColor="@color/white"
-            app:cardElevation="4dp"
             app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
             app:layout_constraintBottom_toBottomOf="@+id/living_room_light_1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.552"
@@ -504,10 +504,10 @@
             android:id="@+id/living_room_btn_light_back"
             android:layout_width="70dp"
             android:layout_height="32dp"
-            android:background="@drawable/shape"
-            android:src="@drawable/icon_back"
             android:layout_marginBottom="8dp"
+            android:background="@drawable/shape"
             android:elevation="3dp"
+            android:src="@drawable/icon_back"
             app:layout_constraintBottom_toTopOf="@+id/living_room_light_1"
             app:layout_constraintStart_toStartOf="@+id/living_room_light_1" />
 
@@ -519,19 +519,19 @@
         android:layout_height="500dp"
         android:layout_below="@+id/weatherForecast"
         android:background="@drawable/body_shape"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:visibility="invisible">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
             android:id="@+id/living_room_btn_air_conditioner_back"
             android:layout_width="70dp"
             android:layout_height="32dp"
-            android:src="@drawable/icon_back"
             android:layout_marginBottom="15dp"
             android:background="@drawable/shape"
             android:elevation="3dp"
+            android:src="@drawable/icon_back"
             app:layout_constraintBottom_toTopOf="@+id/living_room_air_conditioner_1"
             app:layout_constraintStart_toStartOf="@+id/living_room_air_conditioner_1" />
 
@@ -554,11 +554,11 @@
 
                 <ImageView
                     android:id="@+id/imageView_5"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="16dp"
-                    android:src="@drawable/img_air_conditioner"
+                    android:src="@drawable/pump"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.126"
                     app:layout_constraintStart_toStartOf="parent"
@@ -568,8 +568,9 @@
                     android:id="@+id/textView_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Air conditioner"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Pump"
                     android:textColor="@color/dark"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.061"
@@ -614,8 +615,9 @@
                     android:id="@+id/textView_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Air conditioner"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Pump"
                     android:textColor="@color/dark"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.061"
@@ -637,11 +639,11 @@
 
                 <ImageView
                     android:id="@+id/imageView_6"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="16dp"
-                    android:src="@drawable/img_air_conditioner"
+                    android:src="@drawable/pump"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.126"
                     app:layout_constraintStart_toStartOf="parent"

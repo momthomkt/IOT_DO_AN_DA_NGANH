@@ -9,7 +9,6 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import com.example.smarthomedashboard.fragment.ChartFragment;
 import com.example.smarthomedashboard.fragment.HomeFragment;
 import com.example.smarthomedashboard.fragment.SettingFragment;
-import com.example.smarthomedashboard.fragment.CameraFragment;
 import com.example.smarthomedashboard.fragment.VoiceFragment;
 
 
@@ -30,8 +29,6 @@ public class MainViewPagerAdapter extends FragmentStatePagerAdapter {
             case 2:
                 return new SettingFragment();
             case 3:
-                return new CameraFragment();
-            case 4:
                 return new VoiceFragment();
             default:
                 return new HomeFragment();
@@ -41,6 +38,6 @@ public class MainViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 5;
+        return 4;
     }
 }

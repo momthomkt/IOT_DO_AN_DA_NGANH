@@ -83,9 +83,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_setting:
                         main_view_pager.setCurrentItem(2);
                         break;
-                    case R.id.action_camera:
-                        main_view_pager.setCurrentItem(3);
-                        break;
+//                    case R.id.action_camera:
+//                        main_view_pager.setCurrentItem(3);
+//                        break;
                     case R.id.action_voice:
                         main_view_pager.setCurrentItem(4);
                         break;
@@ -116,9 +116,9 @@ public class MainActivity extends AppCompatActivity {
                     case 2:
                         main_bottom_navigation.getMenu().findItem(R.id.action_setting).setChecked(true);
                         break;
-                    case 3:
-                        main_bottom_navigation.getMenu().findItem(R.id.action_camera).setChecked(true);
-                        break;
+//                    case 3:
+//                        main_bottom_navigation.getMenu().findItem(R.id.action_camera).setChecked(true);
+//                        break;
                     case 4:
                         main_bottom_navigation.getMenu().findItem(R.id.action_voice).setChecked(true);
                         break;
