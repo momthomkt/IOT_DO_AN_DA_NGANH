@@ -34,7 +34,6 @@ import java.nio.charset.StandardCharsets;
 
 public class MainActivity extends AppCompatActivity {
 
-//    public static String AIO_key = "aio_cTrb40tApenS19asP5ksRtDVX12x";
     public static String AIO_key = "aio_Oiqq00Mq8wgIn4D17mWR47kEqYVm";
 
     // Declare
@@ -191,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
                     int[] livingRoomAirSwitchList = {R.id.living_room_switch_air_conditioner_1};
 
                     JSONArray lightResponse = jsonObject.getJSONArray("light");
-                    JSONArray airResponse = jsonObject.getJSONArray("pump");
+                    JSONArray airResponse = jsonObject.getJSONArray("fan");
 
                     for (int i = 0; i < lightResponse.length(); i++) {
                         SwitchCompat switchCompat = findViewById(livingRoomLightSwitchList[i]);
@@ -212,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
                     int[] bedRoomAirSwitchList = {R.id.bed_room_switch_air_conditioner_1};
 
                     JSONArray lightResponse = jsonObject.getJSONArray("light");
-                    JSONArray airResponse = jsonObject.getJSONArray("pump");
+                    JSONArray airResponse = jsonObject.getJSONArray("fan");
 
                     for (int i = 0; i < lightResponse.length(); i++) {
                         SwitchCompat switchCompat = findViewById(bedRoomLightSwitchList[i]);
@@ -231,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
                     int[] diningRoomAirSwitchList = {R.id.dining_room_switch_air_conditioner_1};
 
                     JSONArray lightResponse = jsonObject.getJSONArray("light");
-                    JSONArray airResponse = jsonObject.getJSONArray("pump");
+                    JSONArray airResponse = jsonObject.getJSONArray("fan");
 
                     for (int i = 0; i < lightResponse.length(); i++) {
                         SwitchCompat switchCompat = findViewById(diningRoomLightSwitchList[i]);
@@ -275,30 +274,23 @@ public class MainActivity extends AppCompatActivity {
         if (tempLimit != 0 && temp > tempLimit) {
             JSONObject livingRoomData = new JSONObject();
             JSONObject bedRoomData = new JSONObject();
+            JSONObject diningRoomData = new JSONObject();
             if (temp < 39) {
                 livingRoomAirStatus.put(0, 1);
                 bedRoomAirStatus.put(0, 1);
-            } else if (temp >= 39) {
-                livingRoomAirStatus.put(0, 1);
-                livingRoomAirStatus.put(1, 1);
-
-                bedRoomAirStatus.put(0, 1);
-                bedRoomAirStatus.put(1, 1);
-//
-//                diningRoomAirStatus.put(0, 1);
-//                diningRoomAirStatus.put(1, 1);
+                diningRoomAirStatus.put(0, 1);
             }
             livingRoomData.put("light", livingRoomLightStatus);
-            livingRoomData.put("pump", livingRoomAirStatus);
+            livingRoomData.put("fan", livingRoomAirStatus);
             sendDataMQTT(livingRoomData, "livingroom");
 
             bedRoomData.put("light", bedRoomLightStatus);
-            bedRoomData.put("pump", bedRoomAirStatus);
+            bedRoomData.put("fan", bedRoomAirStatus);
             sendDataMQTT(bedRoomData, "bedroom");
-//
-//            diningRoomData.put("light", diningRoomLightStatus);
-//            diningRoomData.put("pump", diningRoomAirStatus);
-//            sendDataMQTT(diningRoomData, "diningroom");
+
+            diningRoomData.put("light", diningRoomLightStatus);
+            diningRoomData.put("fan", diningRoomAirStatus);
+            sendDataMQTT(diningRoomData, "diningroom");
         }
     }
 
@@ -312,7 +304,6 @@ public class MainActivity extends AppCompatActivity {
         message.setPayload(bytes);
         Log.d("publish", "Publish:" + message);
         try {
-//            mqttHelper.mqttAndroidClient.publish("bksmartiot/feeds/" + topic, message);
             mqttHelper.mqttAndroidClient.publish("tan29072001/feeds/" + topic, message);
         } catch (MqttException e) {
             e.printStackTrace();
@@ -330,7 +321,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             livingRoomData.put("light", livingRoomLightStatus);
-            livingRoomData.put("pump", livingRoomAirStatus);
+            livingRoomData.put("fan", livingRoomAirStatus);
             sendDataMQTT(livingRoomData, "livingroom");
         }catch(Exception e){
 
@@ -348,7 +339,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             bedRoomData.put("light", bedRoomLightStatus);
-            bedRoomData.put("pump", bedRoomAirStatus);
+            bedRoomData.put("fan", bedRoomAirStatus);
             sendDataMQTT(bedRoomData, "bedroom");
         }catch(Exception e){
 

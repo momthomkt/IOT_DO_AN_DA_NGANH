@@ -174,8 +174,8 @@ public class DiningRoomFragment extends Fragment implements View.OnClickListener
                                 setHomeInfo(temp, humid, gas);
                             } else if (feeds.equals("diningroom")) {
                                 JSONArray light = jsonVal.getJSONArray("light");
-                                JSONArray pump = jsonVal.getJSONArray("pump");
-                                handleData(light, pump);
+                                JSONArray fan = jsonVal.getJSONArray("fan");
+                                handleData(light, fan);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -239,13 +239,13 @@ public class DiningRoomFragment extends Fragment implements View.OnClickListener
             light.put(ID, light.getInt(ID) == 1 ? 0 : 1);
             JSONObject data = new JSONObject();
             data.put("light", light);
-            data.put("pump", airConditioner);
+            data.put("fan", airConditioner);
             sendDataMQTT(data, "diningroom");
-        } else if (kind.equals("pump")) {
+        } else if (kind.equals("fan")) {
             airConditioner.put(ID, airConditioner.getInt(ID) == 1 ? 0 : 1);
             JSONObject data = new JSONObject();
             data.put("light", light);
-            data.put("pump", airConditioner);
+            data.put("fan", airConditioner);
             sendDataMQTT(data, "diningroom");
         }
     }
@@ -269,7 +269,7 @@ public class DiningRoomFragment extends Fragment implements View.OnClickListener
                 break;
             case R.id.dining_room_switch_air_conditioner_1:
                 try {
-                    handlePublishData(v, "pump", 0);
+                    handlePublishData(v, "fan", 0);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -286,7 +286,6 @@ public class DiningRoomFragment extends Fragment implements View.OnClickListener
         message.setPayload(bytes);
         Log.d("publish", "Publish:" + message);
         try {
-//            mqttHelper.mqttAndroidClient.publish("bksmartiot/feeds/" + topic, message);
             mqttHelper.mqttAndroidClient.publish("tan29072001/feeds/" + topic, message);
         } catch (MqttException e) {
             e.printStackTrace();

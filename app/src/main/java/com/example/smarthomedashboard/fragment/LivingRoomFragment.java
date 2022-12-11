@@ -176,8 +176,8 @@ public class LivingRoomFragment extends Fragment implements View.OnClickListener
                                 setHomeInfo(temp, humid, gas);
                             } else if (feeds.equals("livingroom")) {
                                 JSONArray light = jsonVal.getJSONArray("light");
-                                JSONArray pump = jsonVal.getJSONArray("pump");
-                                handleData(light, pump);
+                                JSONArray fan = jsonVal.getJSONArray("fan");
+                                handleData(light, fan);
                             }
 
                         } catch (JSONException e) {
@@ -242,13 +242,13 @@ public class LivingRoomFragment extends Fragment implements View.OnClickListener
             light.put(ID, light.getInt(ID) == 1 ? 0 : 1);
             JSONObject data = new JSONObject();
             data.put("light", light);
-            data.put("pump", airConditioner);
+            data.put("fan", airConditioner);
             sendDataMQTT(data, "livingroom");
-        } else if (kind.equals("pump")) {
+        } else if (kind.equals("fan")) {
             airConditioner.put(ID, airConditioner.getInt(ID) == 1 ? 0 : 1);
             JSONObject data = new JSONObject();
             data.put("light", light);
-            data.put("pump", airConditioner);
+            data.put("fan", airConditioner);
             sendDataMQTT(data, "livingroom");
         }
     }
@@ -272,7 +272,7 @@ public class LivingRoomFragment extends Fragment implements View.OnClickListener
                 break;
             case R.id.living_room_switch_air_conditioner_1:
                 try {
-                    handlePublishData(v, "pump", 0);
+                    handlePublishData(v, "fan", 0);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
