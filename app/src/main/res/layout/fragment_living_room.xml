@@ -113,7 +113,7 @@
             android:layout_marginEnd="20dp"
             android:background="@android:color/transparent"
             android:indeterminateOnly="false"
-            android:progressDrawable="@drawable/circle_rain"
+            android:progressDrawable="@drawable/circle_gas"
             android:tag="gasProgress"
             tools:progress="25" />
 
@@ -155,7 +155,7 @@
         android:layout_height="500dp"
         android:layout_below="@+id/weatherForecast"
         android:background="@drawable/body_shape"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -267,7 +267,7 @@
         android:layout_height="500dp"
         android:layout_below="@+id/weatherForecast"
         android:background="@drawable/body_shape"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">

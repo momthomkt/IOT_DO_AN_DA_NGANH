@@ -208,10 +208,10 @@ public class MainActivity extends AppCompatActivity {
                     int[] bedRoomLightSwitchList = {
                             R.id.bed_room_switch_light_1,
                             R.id.bed_room_switch_light_2,
-                            R.id.bed_room_switch_light_3,
-                            R.id.bed_room_switch_light_4
+//                            R.id.bed_room_switch_light_3,
+//                            R.id.bed_room_switch_light_4
                     };
-                    int[] bedRoomAirSwitchList = {R.id.bed_room_switch_air_conditioner_1, R.id.bed_room_switch_air_conditioner_2};
+                    int[] bedRoomAirSwitchList = {R.id.bed_room_switch_air_conditioner_1};
 
                     JSONArray lightResponse = jsonObject.getJSONArray("light");
                     JSONArray airResponse = jsonObject.getJSONArray("air");
