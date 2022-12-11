@@ -90,14 +90,8 @@ public class LivingRoomFragment extends Fragment implements View.OnClickListener
         switchCompat_1.setOnClickListener(this);
         SwitchCompat switchCompat_2 = (SwitchCompat) view.findViewById(R.id.living_room_switch_light_2);
         switchCompat_2.setOnClickListener(this);
-        SwitchCompat switchCompat_3 = (SwitchCompat) view.findViewById(R.id.living_room_switch_light_3);
-        switchCompat_3.setOnClickListener(this);
-        SwitchCompat switchCompat_4 = (SwitchCompat) view.findViewById(R.id.living_room_switch_light_4);
-        switchCompat_4.setOnClickListener(this);
         SwitchCompat switchCompat_5 = (SwitchCompat) view.findViewById(R.id.living_room_switch_air_conditioner_1);
         switchCompat_5.setOnClickListener(this);
-        SwitchCompat switchCompat_6 = (SwitchCompat) view.findViewById(R.id.living_room_switch_air_conditioner_2);
-        switchCompat_6.setOnClickListener(this);
 
 
         mqttHelper = new MQTTHelper(view.getContext(), clientID);
@@ -224,11 +218,9 @@ public class LivingRoomFragment extends Fragment implements View.OnClickListener
     public void handleData(JSONArray lightData, JSONArray airConditionerData) throws JSONException {
         int[] livingRoomLightSwitchList = {
                 R.id.living_room_switch_light_1,
-                R.id.living_room_switch_light_2,
-                R.id.living_room_switch_light_3,
-                R.id.living_room_switch_light_4
+                R.id.living_room_switch_light_2
         };
-        int[] livingRoomAirSwitchList = {R.id.living_room_switch_air_conditioner_1, R.id.living_room_switch_air_conditioner_2};
+        int[] livingRoomAirSwitchList = {R.id.living_room_switch_air_conditioner_1};
 
         for (int i = 0; i < lightData.length(); i++) {
             SwitchCompat switchCompat = getView().findViewById(livingRoomLightSwitchList[i]);
@@ -279,30 +271,9 @@ public class LivingRoomFragment extends Fragment implements View.OnClickListener
                     e.printStackTrace();
                 }
                 break;
-            case R.id.living_room_switch_light_3:
-                try {
-                    handlePublishData(v, "light", 2);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                break;
-            case R.id.living_room_switch_light_4:
-                try {
-                    handlePublishData(v, "light", 3);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                break;
             case R.id.living_room_switch_air_conditioner_1:
                 try {
                     handlePublishData(v, "air", 0);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                break;
-            case R.id.living_room_switch_air_conditioner_2:
-                try {
-                    handlePublishData(v, "air", 1);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

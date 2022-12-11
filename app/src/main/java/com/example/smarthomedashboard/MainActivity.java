@@ -186,11 +186,9 @@ public class MainActivity extends AppCompatActivity {
                 } else if (topic.contains("livingroom")) {
                     int[] livingRoomLightSwitchList = {
                             R.id.living_room_switch_light_1,
-                            R.id.living_room_switch_light_2,
-                            R.id.living_room_switch_light_3,
-                            R.id.living_room_switch_light_4
+                            R.id.living_room_switch_light_2
                     };
-                    int[] livingRoomAirSwitchList = {R.id.living_room_switch_air_conditioner_1, R.id.living_room_switch_air_conditioner_2};
+                    int[] livingRoomAirSwitchList = {R.id.living_room_switch_air_conditioner_1};
 
                     JSONArray lightResponse = jsonObject.getJSONArray("light");
                     JSONArray airResponse = jsonObject.getJSONArray("air");
@@ -229,10 +227,8 @@ public class MainActivity extends AppCompatActivity {
                     int[] diningRoomLightSwitchList = {
                             R.id.dining_room_switch_light_1,
                             R.id.dining_room_switch_light_2,
-                            R.id.dining_room_switch_light_3,
-                            R.id.dining_room_switch_light_4
                     };
-                    int[] diningRoomAirSwitchList = {R.id.dining_room_switch_air_conditioner_1, R.id.dining_room_switch_air_conditioner_2};
+                    int[] diningRoomAirSwitchList = {R.id.dining_room_switch_air_conditioner_1};
 
                     JSONArray lightResponse = jsonObject.getJSONArray("light");
                     JSONArray airResponse = jsonObject.getJSONArray("air");
