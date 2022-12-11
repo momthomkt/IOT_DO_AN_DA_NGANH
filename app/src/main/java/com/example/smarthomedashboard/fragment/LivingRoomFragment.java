@@ -158,7 +158,6 @@ public class LivingRoomFragment extends Fragment implements View.OnClickListener
     }
 
     public void curlRequest(String feeds) {
-//        String url = "https://io.adafruit.com/api/v2/bksmartiot/feeds/" + feeds + "/data/last?x-aio-key=" + MainActivity.AIO_key;
         String url = "https://io.adafruit.com/api/v2/tan29072001/feeds/" + feeds + "/data/last?x-aio-key=" + MainActivity.AIO_key;
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
@@ -177,8 +176,8 @@ public class LivingRoomFragment extends Fragment implements View.OnClickListener
                                 setHomeInfo(temp, humid, gas);
                             } else if (feeds.equals("livingroom")) {
                                 JSONArray light = jsonVal.getJSONArray("light");
-                                JSONArray air = jsonVal.getJSONArray("air");
-                                handleData(light, air);
+                                JSONArray pump = jsonVal.getJSONArray("pump");
+                                handleData(light, pump);
                             }
 
                         } catch (JSONException e) {
@@ -243,13 +242,13 @@ public class LivingRoomFragment extends Fragment implements View.OnClickListener
             light.put(ID, light.getInt(ID) == 1 ? 0 : 1);
             JSONObject data = new JSONObject();
             data.put("light", light);
-            data.put("air", airConditioner);
+            data.put("pump", airConditioner);
             sendDataMQTT(data, "livingroom");
-        } else if (kind.equals("air")) {
+        } else if (kind.equals("pump")) {
             airConditioner.put(ID, airConditioner.getInt(ID) == 1 ? 0 : 1);
             JSONObject data = new JSONObject();
             data.put("light", light);
-            data.put("air", airConditioner);
+            data.put("pump", airConditioner);
             sendDataMQTT(data, "livingroom");
         }
     }
@@ -273,7 +272,7 @@ public class LivingRoomFragment extends Fragment implements View.OnClickListener
                 break;
             case R.id.living_room_switch_air_conditioner_1:
                 try {
-                    handlePublishData(v, "air", 0);
+                    handlePublishData(v, "pump", 0);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -290,7 +289,6 @@ public class LivingRoomFragment extends Fragment implements View.OnClickListener
         message.setPayload(bytes);
         Log.d("publish", "Publish:" + message);
         try {
-//            mqttHelper.mqttAndroidClient.publish("bksmartiot/feeds/" + topic, message);
             mqttHelper.mqttAndroidClient.publish("tan29072001/feeds/" + topic, message);
         } catch (MqttException e) {
             e.printStackTrace();

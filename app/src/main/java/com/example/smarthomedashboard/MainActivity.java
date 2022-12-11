@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
                     int[] livingRoomAirSwitchList = {R.id.living_room_switch_air_conditioner_1};
 
                     JSONArray lightResponse = jsonObject.getJSONArray("light");
-                    JSONArray airResponse = jsonObject.getJSONArray("air");
+                    JSONArray airResponse = jsonObject.getJSONArray("pump");
 
                     for (int i = 0; i < lightResponse.length(); i++) {
                         SwitchCompat switchCompat = findViewById(livingRoomLightSwitchList[i]);
@@ -212,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
                     int[] bedRoomAirSwitchList = {R.id.bed_room_switch_air_conditioner_1};
 
                     JSONArray lightResponse = jsonObject.getJSONArray("light");
-                    JSONArray airResponse = jsonObject.getJSONArray("air");
+                    JSONArray airResponse = jsonObject.getJSONArray("pump");
 
                     for (int i = 0; i < lightResponse.length(); i++) {
                         SwitchCompat switchCompat = findViewById(bedRoomLightSwitchList[i]);
@@ -231,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
                     int[] diningRoomAirSwitchList = {R.id.dining_room_switch_air_conditioner_1};
 
                     JSONArray lightResponse = jsonObject.getJSONArray("light");
-                    JSONArray airResponse = jsonObject.getJSONArray("air");
+                    JSONArray airResponse = jsonObject.getJSONArray("pump");
 
                     for (int i = 0; i < lightResponse.length(); i++) {
                         SwitchCompat switchCompat = findViewById(diningRoomLightSwitchList[i]);
@@ -289,15 +289,15 @@ public class MainActivity extends AppCompatActivity {
 //                diningRoomAirStatus.put(1, 1);
             }
             livingRoomData.put("light", livingRoomLightStatus);
-            livingRoomData.put("air", livingRoomAirStatus);
+            livingRoomData.put("pump", livingRoomAirStatus);
             sendDataMQTT(livingRoomData, "livingroom");
 
             bedRoomData.put("light", bedRoomLightStatus);
-            bedRoomData.put("air", bedRoomAirStatus);
+            bedRoomData.put("pump", bedRoomAirStatus);
             sendDataMQTT(bedRoomData, "bedroom");
 //
 //            diningRoomData.put("light", diningRoomLightStatus);
-//            diningRoomData.put("air", diningRoomAirStatus);
+//            diningRoomData.put("pump", diningRoomAirStatus);
 //            sendDataMQTT(diningRoomData, "diningroom");
         }
     }
@@ -330,7 +330,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             livingRoomData.put("light", livingRoomLightStatus);
-            livingRoomData.put("air", livingRoomAirStatus);
+            livingRoomData.put("pump", livingRoomAirStatus);
             sendDataMQTT(livingRoomData, "livingroom");
         }catch(Exception e){
 
@@ -348,7 +348,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             bedRoomData.put("light", bedRoomLightStatus);
-            bedRoomData.put("air", bedRoomAirStatus);
+            bedRoomData.put("pump", bedRoomAirStatus);
             sendDataMQTT(bedRoomData, "bedroom");
         }catch(Exception e){
 

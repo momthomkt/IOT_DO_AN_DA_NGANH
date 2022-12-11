@@ -173,8 +173,8 @@ public class BedRoomFragment extends Fragment implements View.OnClickListener {
                                 setHomeInfo(temp, humid, gas);
                             } else if (feeds.equals("bedroom")) {
                                 JSONArray light = jsonVal.getJSONArray("light");
-                                JSONArray air = jsonVal.getJSONArray("air");
-                                handleData(light, air);
+                                JSONArray pump = jsonVal.getJSONArray("pump");
+                                handleData(light, pump);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -240,13 +240,13 @@ public class BedRoomFragment extends Fragment implements View.OnClickListener {
             light.put(ID, light.getInt(ID) == 1 ? 0 : 1);
             JSONObject data = new JSONObject();
             data.put("light", light);
-            data.put("air", airConditioner);
+            data.put("pump", airConditioner);
             sendDataMQTT(data, "bedroom");
-        } else if (kind.equals("air")) {
+        } else if (kind.equals("pump")) {
             airConditioner.put(ID, airConditioner.getInt(ID) == 1 ? 0 : 1);
             JSONObject data = new JSONObject();
             data.put("light", light);
-            data.put("air", airConditioner);
+            data.put("pump", airConditioner);
             sendDataMQTT(data, "bedroom");
         }
     }
@@ -284,7 +284,7 @@ public class BedRoomFragment extends Fragment implements View.OnClickListener {
 //                break;
             case R.id.bed_room_switch_air_conditioner_1:
                 try {
-                    handlePublishData(v, "air", 0);
+                    handlePublishData(v, "pump", 0);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
