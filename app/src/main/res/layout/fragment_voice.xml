@@ -8,29 +8,37 @@
 
     <TextView
         android:id="@+id/textView"
-        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textStyle="bold|italic"
+        android:gravity="center"
+        android:text="Voice Support"
+        android:textColor="#39659C"
         android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/speaker"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.192" />
 
     <ImageButton
         android:id="@+id/speaker"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:backgroundTint="#FFFFFF"
         android:contentDescription="speak"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:foregroundTint="#FFFFFF"
+        android:scaleType="fitStart"
+        android:scrollbarThumbHorizontal="@drawable/bg_white_corner_16"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/voice_icon_mic"
-        tools:layout_editor_absoluteX="194dp"
-        tools:layout_editor_absoluteY="425dp" />
+        app:layout_constraintVertical_bias="0.84"
+        app:srcCompat="@drawable/img_1"
+        tools:background="#FFFFFF" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
