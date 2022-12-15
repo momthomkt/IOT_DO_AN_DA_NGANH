@@ -45,7 +45,6 @@ public class MQTTService {
     }
 
     private void startMQTT(){
-//        mqttHelper = new MQTTHelper(getContext(), "1913695");
         mqttHelper = new MQTTHelper(getContext(), "1915063");
 
         mqttHelper.setCallback(new MqttCallbackExtended() {

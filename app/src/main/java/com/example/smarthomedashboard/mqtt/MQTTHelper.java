@@ -22,9 +22,7 @@ public class MQTTHelper {
 
     private String clientId = "";
 
-//    final String subscriptionTopic = "bksmartiot/feeds/+";
     final String subscriptionTopic = "tan29072001/feeds/+";
-//    final String username = "bksmartiot";
     final String username = "tan29072001";
     final String password = MainActivity.AIO_key;
 
