@@ -85,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
 //                    case R.id.action_camera:
 //                        main_view_pager.setCurrentItem(3);
 //                        break;
-                    case R.id.action_voice:
-                        main_view_pager.setCurrentItem(4);
-                        break;
+//                    case R.id.action_voice:
+//                        main_view_pager.setCurrentItem(4);
+//                        break;
                 }
                 return true;
             }
@@ -118,9 +118,9 @@ public class MainActivity extends AppCompatActivity {
 //                    case 3:
 //                        main_bottom_navigation.getMenu().findItem(R.id.action_camera).setChecked(true);
 //                        break;
-                    case 4:
-                        main_bottom_navigation.getMenu().findItem(R.id.action_voice).setChecked(true);
-                        break;
+//                    case 4:
+//                        main_bottom_navigation.getMenu().findItem(R.id.action_voice).setChecked(true);
+//                        break;
                 }
             }
 
@@ -153,7 +153,6 @@ public class MainActivity extends AppCompatActivity {
                     int gas = jsonObject.getInt("gas");
 
                     handleExceedLimit(temp);
-
                     int[] tempViewList = {R.id.tempText_1, R.id.tempText_2, R.id.tempText_3};
                     int[] humidViewList = {R.id.humidText_1, R.id.humidText_2, R.id.humidText_3};
                     int[] gasViewList = {R.id.gasText_1, R.id.gasText_2, R.id.gasText_3};

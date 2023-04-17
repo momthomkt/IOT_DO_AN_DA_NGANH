@@ -14,8 +14,8 @@
         android:icon="@drawable/icon_setting"
         android:title="@string/action_setting" />
 
-    <item
-        android:id="@+id/action_voice"
-        android:icon="@drawable/voice_icon_mic"
-        android:title="@string/action_voice" />
+<!--    <item-->
+<!--        android:id="@+id/action_voice"-->
+<!--        android:icon="@drawable/voice_icon_mic"-->
+<!--        android:title="@string/action_voice" />-->
 </menu>
